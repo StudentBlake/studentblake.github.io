@@ -1,4 +1,4 @@
-Started by timer
+Started by StudentBlake
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/darkreader
 [WS-CLEANUP] Deleting project workspace...
@@ -20,13 +20,12 @@ using GIT_ASKPASS to set credentials
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 01ed7b32b7093ea381fc5a8005b79edfa2ebc08c (refs/remotes/origin/master)
+Checking out Revision 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 01ed7b32b7093ea381fc5a8005b79edfa2ebc08c # timeout=10
-Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/37"
- > git rev-list --no-walk 89b7091dd4d2f21a581f809f81eb638cc682c8af # timeout=10
-First time build. Skipping changelog.
-[darkreader] $ /bin/sh -xe /tmp/jenkins4661925801027770136.sh
+ > git checkout -f 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 # timeout=10
+Commit message: "Initial commit"
+ > git rev-list --no-walk 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 # timeout=10
+[darkreader] $ /bin/sh -xe /tmp/jenkins7988683040732674359.sh
 + cd darkreader
 + ./build.sh
 + git clone https://github.com/darkreader/darkreader.git darkreader-src --depth 1
@@ -478,7 +477,7 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/.git/refs/remotes/origin/ (stored 0%)
   adding: darkreader-src/.git/refs/remotes/origin/HEAD (stored 0%)
   adding: darkreader-src/.git/refs/heads/ (stored 0%)
-  adding: darkreader-src/.git/refs/heads/master (deflated 2%)
+  adding: darkreader-src/.git/refs/heads/master (stored 0%)
   adding: darkreader-src/.git/refs/tags/ (stored 0%)
   adding: darkreader-src/.git/packed-refs (deflated 11%)
   adding: darkreader-src/.git/logs/ (stored 0%)
@@ -490,12 +489,12 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/.git/logs/refs/heads/ (stored 0%)
   adding: darkreader-src/.git/logs/refs/heads/master (deflated 35%)
   adding: darkreader-src/.git/config (deflated 37%)
-  adding: darkreader-src/.git/shallow (deflated 2%)
+  adding: darkreader-src/.git/shallow (stored 0%)
   adding: darkreader-src/.git/description (deflated 14%)
   adding: darkreader-src/.git/objects/ (stored 0%)
   adding: darkreader-src/.git/objects/pack/ (stored 0%)
-  adding: darkreader-src/.git/objects/pack/pack-7840843f94b3fb93b334c2898f847452fa8b58da.pack (deflated 0%)
-  adding: darkreader-src/.git/objects/pack/pack-7840843f94b3fb93b334c2898f847452fa8b58da.idx (deflated 5%)
+  adding: darkreader-src/.git/objects/pack/pack-113fb929342c8bc415430bdb0d9cac8af80d635a.pack (deflated 0%)
+  adding: darkreader-src/.git/objects/pack/pack-113fb929342c8bc415430bdb0d9cac8af80d635a.idx (deflated 5%)
   adding: darkreader-src/.git/objects/info/ (stored 0%)
   adding: darkreader-src/.git/info/ (stored 0%)
   adding: darkreader-src/.git/info/exclude (deflated 28%)
@@ -521,71 +520,40 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/README.md (deflated 65%)
 + cd darkreader-src
 + npm install
-npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated event-to-promise@0.8.0: Use promise-toolbox/fromEvent instead
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated jetpack-id@1.0.0: Jetpack extensions are no longer supported by Firefox. Use web-ext instead to build a WebExtension.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated js-select@0.6.0: Package no longer supported. Contact support@npmjs.com for more info.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated @babel/polyfill@7.12.1: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
+npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
 
-> dtrace-provider@0.8.8 install /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src/node_modules/dtrace-provider
-> node-gyp rebuild || node suppress-error.js
+added 1232 packages, and audited 1233 packages in 2m
 
-Traceback (most recent call last):
-  File "/usr/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py", line 47, in <module>
-    import gyp
-  File "/usr/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__init__.py", line 10, in <module>
-    import gyp.input
-  File "/usr/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/input.py", line 7, in <module>
-    import ast
-ImportError: No module named ast
-gyp ERR! configure error 
-gyp ERR! stack Error: `gyp` failed with exit code: 1
-gyp ERR! stack     at ChildProcess.onCpExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/configure.js:351:16)
-gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:277:12)
-gyp ERR! System Linux 5.10.11-v8+
-gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
-gyp ERR! cwd /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src/node_modules/dtrace-provider
-gyp ERR! node -v v14.15.5
-gyp ERR! node-gyp -v v5.1.0
-gyp ERR! not ok 
-
-> core-js@2.6.12 postinstall /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src/node_modules/core-js
-> node -e "try{require('./postinstall')}catch(e){}"
-
-
-> core-js@3.6.5 postinstall /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src/node_modules/sign-addon/node_modules/core-js
-> node -e "try{require('./postinstall')}catch(e){}"
-
-
-> spawn-sync@1.0.15 postinstall /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src/node_modules/spawn-sync
-> node postinstall
-
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm64"})
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.1 (node_modules/fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.1: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm64"})
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.2.1 (node_modules/addons-linter/node_modules/fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.2.1: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm64"})
-
-added 1125 packages from 1308 contributors and audited 1133 packages in 134.281s
-
-76 packages are looking for funding
+77 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
-
 + npm run build
 
-> darkreader@4.9.28 build /var/lib/jenkins/workspace/darkreader/darkreader/darkreader-src
+> darkreader@4.9.28 build
 > node tasks/build.js --release
 
-03:17:11 BUILD
-03:17:11 clean (6ms)
-03:22:28 bundle-js (316590ms)
-03:22:30 bundle-css (2483ms)
-03:22:31 bundle-html (110ms)
-03:22:31 bundle-locales (371ms)
-03:22:32 copy (1205ms)
-03:23:06 code-style (33575ms)
-03:23:08 zip (1936ms)
-03:23:08 MISSION PASSED! RESPECT +
+12:16:04 BUILD
+12:16:04 clean (6ms)
+12:22:11 bundle-js (367258ms)
+12:22:13 bundle-css (2083ms)
+12:22:13 bundle-html (130ms)
+12:22:14 bundle-locales (309ms)
+12:22:14 copy (715ms)
+12:22:48 code-style (33901ms)
+12:22:50 zip (1958ms)
+12:22:50 MISSION PASSED! RESPECT +
 + cd ..
 + rm -rf nightly
 + mkdir nightly
@@ -594,4 +562,4 @@ found 0 vulnerabilities
 + mv darkreader-src/build-firefox.xpi nightly/
 + rm -rf darkreader-src/
 [PostBuildScript] - [INFO] Executing post build scripts.
-[darkreader] $ /bin/sh -xe /tmp/jenkins17257673498130766502.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins17970923724091478569.sh
