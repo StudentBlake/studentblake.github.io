@@ -1,4 +1,4 @@
-Started by StudentBlake
+Started by timer
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/darkreader
 [WS-CLEANUP] Deleting project workspace...
@@ -20,12 +20,13 @@ using GIT_ASKPASS to set credentials
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 (refs/remotes/origin/master)
+Checking out Revision ae9c2a68cefee884956dec3c7bd650c0d18739ee (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 # timeout=10
-Commit message: "Initial commit"
+ > git checkout -f ae9c2a68cefee884956dec3c7bd650c0d18739ee # timeout=10
+Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/41"
  > git rev-list --no-walk 9fa0a2314e2bd35f94179cffdab7a2e90b10f964 # timeout=10
-[darkreader] $ /bin/sh -xe /tmp/jenkins7988683040732674359.sh
+First time build. Skipping changelog.
+[darkreader] $ /bin/sh -xe /tmp/jenkins12421218148163084248.sh
 + cd darkreader
 + ./build.sh
 + git clone https://github.com/darkreader/darkreader.git darkreader-src --depth 1
@@ -533,7 +534,7 @@ npm WARN deprecated request@2.88.2: request has been deprecated, see https://git
 npm WARN deprecated @babel/polyfill@7.12.1: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
 npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
 
-added 1232 packages, and audited 1233 packages in 2m
+added 1232 packages, and audited 1233 packages in 1m
 
 77 packages are looking for funding
   run `npm fund` for details
@@ -544,16 +545,16 @@ found 0 vulnerabilities
 > darkreader@4.9.28 build
 > node tasks/build.js --release
 
-12:16:04 BUILD
-12:16:04 clean (6ms)
-12:22:11 bundle-js (367258ms)
-12:22:13 bundle-css (2083ms)
-12:22:13 bundle-html (130ms)
-12:22:14 bundle-locales (309ms)
-12:22:14 copy (715ms)
-12:22:48 code-style (33901ms)
-12:22:50 zip (1958ms)
-12:22:50 MISSION PASSED! RESPECT +
+03:16:14 BUILD
+03:16:14 clean (6ms)
+03:21:49 bundle-js (334667ms)
+03:21:51 bundle-css (2454ms)
+03:21:51 bundle-html (150ms)
+03:21:52 bundle-locales (340ms)
+03:21:52 copy (847ms)
+03:22:26 code-style (33593ms)
+03:22:28 zip (2147ms)
+03:22:28 MISSION PASSED! RESPECT +
 + cd ..
 + rm -rf nightly
 + mkdir nightly
@@ -562,4 +563,4 @@ found 0 vulnerabilities
 + mv darkreader-src/build-firefox.xpi nightly/
 + rm -rf darkreader-src/
 [PostBuildScript] - [INFO] Executing post build scripts.
-[darkreader] $ /bin/sh -xe /tmp/jenkins17970923724091478569.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins15458297793455160554.sh
