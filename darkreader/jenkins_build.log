@@ -1,4 +1,4 @@
-Started by timer
+Started by StudentBlake
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/darkreader
 [WS-CLEANUP] Deleting project workspace...
@@ -20,13 +20,13 @@ using GIT_ASKPASS to set credentials
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 9c77932631a69256b73cc7ce426254158b5a46fd (refs/remotes/origin/master)
+Checking out Revision 20a7b16f3c4fa607f4abdcd3b7a9acceaf483303 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 9c77932631a69256b73cc7ce426254158b5a46fd # timeout=10
-Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/42"
- > git rev-list --no-walk ae9c2a68cefee884956dec3c7bd650c0d18739ee # timeout=10
+ > git checkout -f 20a7b16f3c4fa607f4abdcd3b7a9acceaf483303 # timeout=10
+Commit message: "Initial page for displaying Jenkins automated builds"
+ > git rev-list --no-walk 9c77932631a69256b73cc7ce426254158b5a46fd # timeout=10
 First time build. Skipping changelog.
-[darkreader] $ /bin/sh -xe /tmp/jenkins13656714702566152770.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins544479313841075939.sh
 + cd darkreader
 + ./build.sh
 + git clone https://github.com/darkreader/darkreader.git darkreader-src --depth 1
@@ -494,8 +494,8 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/.git/description (deflated 14%)
   adding: darkreader-src/.git/objects/ (stored 0%)
   adding: darkreader-src/.git/objects/pack/ (stored 0%)
-  adding: darkreader-src/.git/objects/pack/pack-d25c858473bbcaa341cebcb140e72673ce27c492.idx (deflated 5%)
-  adding: darkreader-src/.git/objects/pack/pack-d25c858473bbcaa341cebcb140e72673ce27c492.pack (deflated 0%)
+  adding: darkreader-src/.git/objects/pack/pack-740f2f1bda3a5121bcd2a49b38a071b7e3dcf9af.idx (deflated 5%)
+  adding: darkreader-src/.git/objects/pack/pack-740f2f1bda3a5121bcd2a49b38a071b7e3dcf9af.pack (deflated 0%)
   adding: darkreader-src/.git/objects/info/ (stored 0%)
   adding: darkreader-src/.git/info/ (stored 0%)
   adding: darkreader-src/.git/info/exclude (deflated 28%)
@@ -545,16 +545,16 @@ found 0 vulnerabilities
 > darkreader@4.9.28 build
 > node tasks/build.js --release
 
-03:17:53 BUILD
-03:17:53 clean (6ms)
-03:23:59 bundle-js (365361ms)
-03:24:01 bundle-css (2132ms)
-03:24:01 bundle-html (81ms)
-03:24:01 bundle-locales (302ms)
-03:24:02 copy (858ms)
-03:24:36 code-style (34155ms)
-03:24:38 zip (1917ms)
-03:24:38 MISSION PASSED! RESPECT +
+14:47:17 BUILD
+14:47:17 clean (17ms)
+14:52:52 bundle-js (334639ms)
+14:52:55 bundle-css (2223ms)
+14:52:55 bundle-html (255ms)
+14:52:55 bundle-locales (314ms)
+14:52:56 copy (483ms)
+14:53:29 code-style (33669ms)
+14:53:31 zip (2011ms)
+14:53:31 MISSION PASSED! RESPECT +
 + cd ..
 + rm -rf nightly
 + mkdir nightly
@@ -563,4 +563,4 @@ found 0 vulnerabilities
 + mv darkreader-src/build-firefox.xpi nightly/
 + rm -rf darkreader-src/
 [PostBuildScript] - [INFO] Executing post build scripts.
-[darkreader] $ /bin/sh -xe /tmp/jenkins6649704974266849090.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins1953076929386687924.sh
