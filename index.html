@@ -1,1 +1,82 @@
-Hello world.
+<!DOCTYPE html>
+<html>
+<title>GitHub - StudentBlake</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css/container.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+  <div id="page-container">
+    <div id="content-wrap">
+      <!-- Header -->
+      <header class="w3-container w3-theme w3-padding">
+        <div class="w3-center">
+          <h1 class="w3-xxxlarge w3-animate-top">StudentBlake Repository</h1>
+        </div>
+      </header>
+
+
+      <div class="w3-container">
+        <hr>
+        <div class="w3-center">
+          <h2>Dark Reader | <a href="https://github.com/darkreader/darkreader" target="_blank">GitHub</a></h2>
+          <p w3-class="w3-large">These builds are currently automated with Jenkins on a Raspberry Pi 3 Model B+.</p>
+        </div>
+        <div class="w3-responsive w3-card-4">
+          <table class="w3-table w3-striped w3-bordered" id="darkreaderTable">
+            <thead>
+              <tr class="w3-theme">
+                <th>Build Log</th>
+                <th>Build Date</th>
+                <th>Extension Download</th>
+                <th>Source Download</th>
+                <th>GitHub Link</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark" id="footer">
+      <p style="text-align:center">StudentBlake 2021. Powered by <a href="https://www.w3schools.com/w3css/default.asp"
+          target="_blank">w3.css</a>.</p>
+    </footer>
+  </div>
+
+  <!-- Script for getting and processing the latest JSON for Dark Reader nightly builds -->
+  <script>
+    var xmlhttp, tagList, txt = "", baseLink = "https://github.com/StudentBlake/studentblake.github.io";
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        tagList = JSON.parse(this.responseText);
+        for (build in tagList) {
+          var currentTag = tagList[build].name
+          var splitTag = currentTag.split("-");
+          var buildNumber = splitTag[2];
+          var buildDate = splitTag[3]
+
+          txt += "<tbody><tr>";
+          txt += '<td><a href="' + "https://raw.githubusercontent.com/StudentBlake/studentblake.github.io/" + currentTag + "/darkreader/jenkins_build.log" + '" target="_blank">#' + buildNumber + '</a></td>';
+          txt += "<td>" + buildDate + "</td>";
+          txt += '<td><a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/build-chrome.zip" + '">build-chrome.zip</a> | <a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/build-firefox.xpi" + '">build-firefox.xpi</a></td>';
+          txt += '<td><a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/darkreader-src.zip" + '">darkreader-src.zip</a></td>';
+          txt += '<td><a href="' + baseLink + "/tree/" + currentTag + '" target="_blank">' + currentTag + '</a></td>';
+          txt += "</tr></tbody>";
+        }
+        document.getElementById("darkreaderTable").innerHTML += txt;
+      }
+    };
+    xmlhttp.open("GET", "https://api.github.com/repos/StudentBlake/studentblake.github.io/tags", true);
+    xmlhttp.send();
+  </script>
+</body>
+
+</html>
