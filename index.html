@@ -15,15 +15,27 @@
       <header class="w3-container w3-theme w3-padding">
         <div class="w3-center">
           <h1 class="w3-xxxlarge w3-animate-top">StudentBlake Repository</h1>
+          <h2><a href="https://github.com/StudentBlake/studentblake.github.io" target="_blank"><i
+                class="fa fa-github-alt" aria-hidden="true"></i></a></h2>
         </div>
       </header>
 
+      <div class="w3-padding w3-blue-grey w3-display-container">
+        <h2>Where am I?</h2>
+        <p>The purpose of this page is to display proof-of-concept work and learning interests.</p>
+      </div>
+
+      <hr>
 
       <div class="w3-container">
-        <hr>
+
         <div class="w3-center">
-          <h2>Dark Reader | <a href="https://github.com/darkreader/darkreader" target="_blank">GitHub</a></h2>
-          <p w3-class="w3-large">These builds are currently automated with Jenkins on a Raspberry Pi 3 Model B+.</p>
+          <h2>Dark Reader <a href="https://github.com/darkreader/darkreader" target="_blank"><i class="fa fa-github"
+                aria-hidden="true"></i></a></h2>
+          <p w3-class="w3-large">This extension inverts brightness of web pages and aims to reduce eyestrain while you
+            browse the web.</p>
+          <p w3-class="w3-large">I did not create this project, but automated nightly builds using Jenkins on a
+            Raspberry Pi 3 Model B+.</p>
         </div>
         <div class="w3-responsive w3-card-4">
           <table class="w3-table w3-striped w3-bordered" id="darkreaderTable">
@@ -33,15 +45,15 @@
                 <th>Build Date</th>
                 <th>Extension Download</th>
                 <th>Source Download</th>
-                <th>GitHub Link</th>
+                <th>Tag Link</th>
               </tr>
             </thead>
           </table>
         </div>
       </div>
-      <br>
-      <hr>
     </div>
+
+    <hr>
 
     <!-- Footer -->
     <footer class="w3-container w3-theme-dark" id="footer">
@@ -58,17 +70,17 @@
       if (this.readyState == 4 && this.status == 200) {
         tagList = JSON.parse(this.responseText);
         for (build in tagList) {
-          var currentTag = tagList[build].name
-          var splitTag = currentTag.split("-");
+          var tag = tagList[build].name
+          var splitTag = tag.split("-");
           var buildNumber = splitTag[2];
           var buildDate = splitTag[3]
 
           txt += "<tbody><tr>";
-          txt += '<td><a href="' + "https://raw.githubusercontent.com/StudentBlake/studentblake.github.io/" + currentTag + "/darkreader/jenkins_build.log" + '" target="_blank">#' + buildNumber + '</a></td>';
+          txt += '<td><a href="' + "https://raw.githubusercontent.com/StudentBlake/studentblake.github.io/" + tag + "/darkreader/jenkins_build.log" + '" target="_blank">#' + buildNumber + '</a></td>';
           txt += "<td>" + buildDate + "</td>";
-          txt += '<td><a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/build-chrome.zip" + '">build-chrome.zip</a> | <a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/build-firefox.xpi" + '">build-firefox.xpi</a></td>';
-          txt += '<td><a href="' + baseLink + "/raw/" + currentTag + "/darkreader/nightly/darkreader-src.zip" + '">darkreader-src.zip</a></td>';
-          txt += '<td><a href="' + baseLink + "/tree/" + currentTag + '" target="_blank">' + currentTag + '</a></td>';
+          txt += '<td><a href="' + baseLink + "/raw/" + tag + "/darkreader/nightly/build-chrome.zip" + '">build-chrome.zip</a> | <a href="' + baseLink + "/raw/" + tag + "/darkreader/nightly/build-firefox.xpi" + '">build-firefox.xpi</a></td>';
+          txt += '<td><a href="' + baseLink + "/raw/" + tag + "/darkreader/nightly/darkreader-src.zip" + '">darkreader-src.zip</a></td>';
+          txt += '<td><a href="' + baseLink + "/tree/" + tag + '" target="_blank">' + tag + '</a></td>';
           txt += "</tr></tbody>";
         }
         document.getElementById("darkreaderTable").innerHTML += txt;
