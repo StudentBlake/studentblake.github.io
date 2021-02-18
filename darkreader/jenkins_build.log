@@ -20,13 +20,13 @@ using GIT_ASKPASS to set credentials
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision d63a261fda389bc064109ff6cce69c49e329211b (refs/remotes/origin/master)
+Checking out Revision 9a7c675d413b9771fd88d726c0b66b2c2a6c46fa (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f d63a261fda389bc064109ff6cce69c49e329211b # timeout=10
-Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/46"
- > git rev-list --no-walk 366d5b26083679c4fd6a4f9d65333582da0b21db # timeout=10
+ > git checkout -f 9a7c675d413b9771fd88d726c0b66b2c2a6c46fa # timeout=10
+Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/47"
+ > git rev-list --no-walk d63a261fda389bc064109ff6cce69c49e329211b # timeout=10
 First time build. Skipping changelog.
-[darkreader] $ /bin/sh -xe /tmp/jenkins12434195904700660318.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins6090292597152122916.sh
 + cd darkreader
 + ./build.sh
 + git clone https://github.com/darkreader/darkreader.git darkreader-src --depth 1
@@ -478,7 +478,7 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/.git/refs/remotes/origin/ (stored 0%)
   adding: darkreader-src/.git/refs/remotes/origin/HEAD (stored 0%)
   adding: darkreader-src/.git/refs/heads/ (stored 0%)
-  adding: darkreader-src/.git/refs/heads/master (deflated 2%)
+  adding: darkreader-src/.git/refs/heads/master (stored 0%)
   adding: darkreader-src/.git/refs/tags/ (stored 0%)
   adding: darkreader-src/.git/packed-refs (deflated 11%)
   adding: darkreader-src/.git/logs/ (stored 0%)
@@ -490,12 +490,12 @@ Cloning into 'darkreader-src'...
   adding: darkreader-src/.git/logs/refs/heads/ (stored 0%)
   adding: darkreader-src/.git/logs/refs/heads/master (deflated 35%)
   adding: darkreader-src/.git/config (deflated 37%)
-  adding: darkreader-src/.git/shallow (deflated 2%)
+  adding: darkreader-src/.git/shallow (stored 0%)
   adding: darkreader-src/.git/description (deflated 14%)
   adding: darkreader-src/.git/objects/ (stored 0%)
   adding: darkreader-src/.git/objects/pack/ (stored 0%)
-  adding: darkreader-src/.git/objects/pack/pack-215bd32c680d1a053ccd4c736a3f049e46caa2f8.idx (deflated 5%)
-  adding: darkreader-src/.git/objects/pack/pack-215bd32c680d1a053ccd4c736a3f049e46caa2f8.pack (deflated 0%)
+  adding: darkreader-src/.git/objects/pack/pack-e3dfd9a3462f302fd7007ea93b6cc6192ce01d0f.idx (deflated 5%)
+  adding: darkreader-src/.git/objects/pack/pack-e3dfd9a3462f302fd7007ea93b6cc6192ce01d0f.pack (deflated 0%)
   adding: darkreader-src/.git/objects/info/ (stored 0%)
   adding: darkreader-src/.git/info/ (stored 0%)
   adding: darkreader-src/.git/info/exclude (deflated 28%)
@@ -534,7 +534,7 @@ npm WARN deprecated request@2.88.2: request has been deprecated, see https://git
 npm WARN deprecated @babel/polyfill@7.12.1: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
 npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
 
-added 1233 packages, and audited 1234 packages in 1m
+added 1233 packages, and audited 1234 packages in 2m
 
 77 packages are looking for funding
   run `npm fund` for details
@@ -545,16 +545,16 @@ found 0 vulnerabilities
 > darkreader@4.9.28 build
 > node tasks/build.js --release
 
-03:17:19 BUILD
-03:17:19 clean (6ms)
-03:23:25 bundle-js (365542ms)
-03:23:27 bundle-css (2481ms)
-03:23:27 bundle-html (81ms)
-03:23:28 bundle-locales (293ms)
-03:23:28 copy (463ms)
-03:24:02 code-style (33394ms)
-03:24:04 zip (1985ms)
-03:24:04 MISSION PASSED! RESPECT +
+03:17:21 BUILD
+03:17:21 clean (5ms)
+03:23:03 bundle-js (342101ms)
+03:23:06 bundle-css (2413ms)
+03:23:06 bundle-html (94ms)
+03:23:06 bundle-locales (299ms)
+03:23:07 copy (993ms)
+03:23:41 code-style (33673ms)
+03:23:43 zip (1934ms)
+03:23:43 MISSION PASSED! RESPECT +
 + cd ..
 + rm -rf nightly
 + mkdir nightly
@@ -563,4 +563,4 @@ found 0 vulnerabilities
 + mv darkreader-src/build-firefox.xpi nightly/
 + rm -rf darkreader-src/
 [PostBuildScript] - [INFO] Executing post build scripts.
-[darkreader] $ /bin/sh -xe /tmp/jenkins3485460941022754674.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins10442144872656659695.sh
