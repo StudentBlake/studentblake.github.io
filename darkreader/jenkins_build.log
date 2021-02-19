@@ -20,13 +20,13 @@ using GIT_ASKPASS to set credentials
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 9a7c675d413b9771fd88d726c0b66b2c2a6c46fa (refs/remotes/origin/master)
+Checking out Revision 6fb9b38683e96c644ac0dedf5f822b1fca935722 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 9a7c675d413b9771fd88d726c0b66b2c2a6c46fa # timeout=10
-Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/47"
- > git rev-list --no-walk d63a261fda389bc064109ff6cce69c49e329211b # timeout=10
+ > git checkout -f 6fb9b38683e96c644ac0dedf5f822b1fca935722 # timeout=10
+Commit message: "Built by Jenkins: JOB_NAME/darkreader, BUILD_NUMBER/48"
+ > git rev-list --no-walk 9a7c675d413b9771fd88d726c0b66b2c2a6c46fa # timeout=10
 First time build. Skipping changelog.
-[darkreader] $ /bin/sh -xe /tmp/jenkins6090292597152122916.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins16185285996502532166.sh
 + cd darkreader
 + ./build.sh
 + git clone https://github.com/darkreader/darkreader.git darkreader-src --depth 1
@@ -527,14 +527,14 @@ npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprec
 npm WARN deprecated har-validator@5.1.5: this library is no longer supported
 npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
 npm WARN deprecated jetpack-id@1.0.0: Jetpack extensions are no longer supported by Firefox. Use web-ext instead to build a WebExtension.
-npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
 npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
 npm WARN deprecated js-select@0.6.0: Package no longer supported. Contact support@npmjs.com for more info.
 npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
 npm WARN deprecated @babel/polyfill@7.12.1: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
 npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
 
-added 1233 packages, and audited 1234 packages in 2m
+added 1233 packages, and audited 1234 packages in 1m
 
 77 packages are looking for funding
   run `npm fund` for details
@@ -545,16 +545,16 @@ found 0 vulnerabilities
 > darkreader@4.9.28 build
 > node tasks/build.js --release
 
-03:17:21 BUILD
-03:17:21 clean (5ms)
-03:23:03 bundle-js (342101ms)
-03:23:06 bundle-css (2413ms)
-03:23:06 bundle-html (94ms)
-03:23:06 bundle-locales (299ms)
-03:23:07 copy (993ms)
-03:23:41 code-style (33673ms)
-03:23:43 zip (1934ms)
-03:23:43 MISSION PASSED! RESPECT +
+03:17:13 BUILD
+03:17:13 clean (6ms)
+03:24:45 bundle-js (452434ms)
+03:24:48 bundle-css (2523ms)
+03:24:48 bundle-html (92ms)
+03:24:48 bundle-locales (297ms)
+03:24:49 copy (540ms)
+03:25:22 code-style (33651ms)
+03:25:24 zip (1973ms)
+03:25:24 MISSION PASSED! RESPECT +
 + cd ..
 + rm -rf nightly
 + mkdir nightly
@@ -563,4 +563,4 @@ found 0 vulnerabilities
 + mv darkreader-src/build-firefox.xpi nightly/
 + rm -rf darkreader-src/
 [PostBuildScript] - [INFO] Executing post build scripts.
-[darkreader] $ /bin/sh -xe /tmp/jenkins10442144872656659695.sh
+[darkreader] $ /bin/sh -xe /tmp/jenkins3220246285557639928.sh
